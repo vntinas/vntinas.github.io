@@ -47,14 +47,13 @@
   }
   .about-me-img {
     background-image: url("chip_img.jpg");
-    flex: 490 1 0%;
+    /*flex: 490 1 0%;
     margin-left: 0px;
-    min-width: 490px;
     margin-top: 0px;
     margin-bottom: 0px;
     top: 0px;
-    height: 842px;
-    position: relative;
+    min-height: 842px;
+    position: relative;*/
     background-position: center;
     background-size: cover;
     opacity: 0.8;
@@ -213,10 +212,17 @@
       color: #fff !important;
       background-color: #f5f5f5 !important;
   }
+  footer {
+      background-color: #eaf7ff;
+  }
   footer .glyphicon {
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: #f4511e;
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #777;
+  }
+  footer a {
+      font: 500 16px 'Arizonia', Helvetica, sans-serif;
+      color: #777;
   }
   .slideanim {visibility:hidden;}
   .slide {
@@ -230,7 +236,6 @@
     background-image: url("vertical_sep.jpg");
     flex: 280 1 0%;
     margin-left: 0px;
-    min-width: 490px;
     margin-top: 0px;
     margin-bottom: 0px;
     top: 0px;
@@ -243,7 +248,6 @@
     background-color: rgba(0, 0, 0, 0.25);
     flex: 280 1 0%;
     margin-left: 0px;
-    min-width: 490px;
     margin-top: 0px;
     margin-bottom: 0px;
     top: 0px;
@@ -321,6 +325,26 @@
       padding-top: 0px;
     }
   }
+  * {
+      box-sizing: border-box;
+  }
+
+  .col-container {
+      display: table;
+      width: 100%;
+  }
+  .col {
+      display: table-cell;
+      width: 50%;
+
+  }
+
+  @media only screen and (max-width: 768px) {
+      .col {
+          display: block;
+          width: 100%;
+      }
+  }
   </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -341,9 +365,9 @@
       <ul class="nav navbar-nav navbar-left container-menu-tabs">
         <li><a href="#myPage">Home</a></li>
         <li><a href="#about">About Me</a></li>
-        <li><a href="#services">Education</a></li>
-        <li><a href="#portfolio">Experience</a></li>
-        <li><a href="#pricing">Publications</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#pubs">Publications</a></li>
+        <li><a href="#quotes">Quotes</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -365,34 +389,32 @@
 </div>
 
 <!-- Container (About Me Section) -->
-<div id="about" class="container-fluid about-me">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="col-md-8 col-md-offset-2 about-me-txt">
-          <h2>About Me</h2>
-          <h4>
-            I was born in Xanthi, Greece on 7 November 1992. I received my Diploma (Master of Engineering) in Electrical and
-            Computer Engineering (ECE) from Department of ECE at Democritus University of Thrace (DUTh), Xanthi, Greece in July
-            of 2015 and I was 4th (~1-2%) of my class on time graduates. On May 2017, I completed my Master of Science (M.Sc.)
-            on “Microelectronics and Computer Systems” in the scientific field of "Biologically Inspired Electronic Circuit and
-            Systems" at the same department, with the main object of interest the Analogue and Digital Memristive Circuits. Currently,
-            I am pursuing my Ph.D. in the field of Emerging Computing with Memristors, under the co-supervision of Prof. Sirakoulis
-            (DUTh) and Prof. Rubio (Universitat Politècnica de Catalunya, UPC).
-            <br>
-            In general, I am a Circuit Design enthusiast, both Digital and Analogue, with high-quality theoretical background and I
-            have dealt a lot with PSpice circuit description and simulation. Also, I am really experienced in Software Programming
-            Languages and I have worked on FPGA implementations, too. I am interested in Emergent Computing, Cellular Automata, Cellular
-            Nonlinear/Neural/Nanoscale Networks, Neuromorphic Computing, Machine Learning and Novel Computing Technologies. Finally, I am
-            a fast learner and I have collaborated successfully with other researchers and students during all years of my studies.</h4>
-        </div>
-      </div>
-      <div class="col-md-6 about-me-img">
-      </div>
+<div class="col-container about-me">
+  <div class="col">
+    <div class="col-lg-8 col-lg-offset-2 about-me-txt">
+      <h2>About Me</h2>
+      <h4>
+        I was born in Xanthi, Greece on 7 November 1992. I received my Diploma (Master of Engineering) in Electrical and
+        Computer Engineering (ECE) from Department of ECE at Democritus University of Thrace (DUTh), Xanthi, Greece in July
+        of 2015 and I was 4th (~1-2%) of my class on time graduates. On May 2017, I completed my Master of Science (M.Sc.)
+        on “Microelectronics and Computer Systems” in the scientific field of "Biologically Inspired Electronic Circuit and
+        Systems" at the same department, with the main object of interest the Analogue and Digital Memristive Circuits. Currently,
+        I am pursuing my Ph.D. in the field of Emerging Computing with Memristors, under the co-supervision of Prof. Sirakoulis
+        (DUTh) and Prof. Rubio (Universitat Politècnica de Catalunya, UPC).
+        <br>
+        In general, I am a Circuit Design enthusiast, both Digital and Analogue, with high-quality theoretical background and I
+        have dealt a lot with PSpice circuit description and simulation. Also, I am really experienced in Software Programming
+        Languages and I have worked on FPGA implementations, too. I am interested in Emergent Computing, Cellular Automata, Cellular
+        Nonlinear/Neural/Nanoscale Networks, Neuromorphic Computing, Machine Learning and Novel Computing Technologies. Finally, I am
+        a fast learner and I have collaborated successfully with other researchers and students during all years of my studies.</h4>
     </div>
+  </div>
+  <div class="col about-me-img">
+  </div>
 </div>
 
 <!-- Container (Education Section) -->
-<div id="services" class="container-fluid about-me">
+<div id="education" class="container-fluid about-me">
     <div class="row vertical-section-title">
       <div class="col-xs-12 text-center vertical-section-title-txt">
         <div class="text-center">
@@ -402,6 +424,37 @@
       </div>
     </div>
     <div class="row">
+        <div class="col-md-8 col-md-offset-2 about-me-txt">
+          <h2>About Me</h2>
+          <h4>
+            I was born in Xanthi, Greece on 7 November 1992. I received my Diploma (Master of Engineering) in Electrical and
+            Computer Engineering (ECE) from Department of ECE at Democritus University of Thrace (DUTh), Xanthi, Greece in July
+            of 2015 and I was 4th (~1-2%) of my class on time graduates. On May 2017, I completed my Master of Science (M.Sc.)
+            on “Microelectronics and Computer Systems” in the scientific field of "Biologically Inspired Electronic Circuit and
+            Systems" at the same department, with the main object of interest the Analogue and Digital Memristive Circuits. Currently,
+            I am pursuing my Ph.D. in the field of Emerging Computing with Memristors, under the co-supervision of Prof. Sirakoulis
+            (DUTh) and Prof. Rubio (Universitat Politècnica de Catalunya, UPC).
+            <br>
+            In general, I am a Circuit Design enthusiast, both Digital and Analogue, with high-quality theoretical background and I
+            have dealt a lot with PSpice circuit description and simulation. Also, I am really experienced in Software Programming
+            Languages and I have worked on FPGA implementations, too. I am interested in Emergent Computing, Cellular Automata, Cellular
+            Nonlinear/Neural/Nanoscale Networks, Neuromorphic Computing, Machine Learning and Novel Computing Technologies. Finally, I am
+            a fast learner and I have collaborated successfully with other researchers and students during all years of my studies.</h4>
+        </div>
+    </div>
+</div>
+
+<!-- Container (Publications Section) -->
+<div id="pubs" class="container-fluid about-me">
+    <div class="row vertical-section-title">
+      <div class="col-xs-12 text-center vertical-section-title-txt">
+        <div class="text-center">
+          <h2>PUBLICATIONS</h2>
+          <h4>My Current Works as a Young (wannabe) Researcher</h4>
+        </div>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-md-6">
         <div class="col-md-8 col-md-offset-2 about-me-txt">
           <h2>About Me</h2>
@@ -424,91 +477,9 @@
     </div>
 </div>
 
-<div class="container-fluid bg-grey">
-  <div class="row">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-globe logo slideanim"></span>
-    </div>
-    <div class="col-sm-8">
-      <h2>Our Values</h2><br>
-      <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-  </div>
-</div>
-
-<!-- Container (Services Section) -->
-<div class="container-fluid text-center">
-  <h2>SERVICES</h2>
-  <h4>What we offer</h4>
-  <br>
-  <div class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-off logo-small"></span>
-      <h4>POWER</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-heart logo-small"></span>
-      <h4>LOVE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-lock logo-small"></span>
-      <h4>JOB DONE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-  </div>
-  <br><br>
-  <div class="row slideanim">
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-leaf logo-small"></span>
-      <h4>GREEN</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-certificate logo-small"></span>
-      <h4>CERTIFIED</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-wrench logo-small"></span>
-      <h4 style="color:#303030;">HARD WORK</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
-    </div>
-  </div>
-</div>
-
-<!-- Container (Portfolio Section) -->
-<div id="portfolio" class="container-fluid text-center bg-grey">
-  <h2>Portfolio</h2><br>
-  <h4>What we have created</h4>
-  <div class="row text-center slideanim">
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <!--<img src="paris.jpg" alt="Paris" width="400" height="300">-->
-        <p><strong>Paris</strong></p>
-        <p>Yes, we built Paris</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <!--<img src="newyork.jpg" alt="New York" width="400" height="300">-->
-        <p><strong>New York</strong></p>
-        <p>We built New York</p>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <!--<img src="sanfran.jpg" alt="San Francisco" width="400" height="300">-->
-        <p><strong>San Francisco</strong></p>
-        <p>Yes, San Fran is ours</p>
-      </div>
-    </div>
-  </div><br>
-
-  <h2>What our customers say</h2>
+<!-- Container (Quotes Section) -->
+<div id="quotes" class="container-fluid text-center bg-grey">
+  <h2>Quoting....</h2>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -539,73 +510,6 @@
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
-  </div>
-</div>
-
-<!-- Container (Pricing Section) -->
-<div id="pricing" class="container-fluid">
-  <div class="text-center">
-    <h2>Pricing</h2>
-    <h4>Choose a payment plan that works for you</h4>
-  </div>
-  <div class="row slideanim">
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Basic</h1>
-        </div>
-        <div class="panel-body">
-          <p><strong>20</strong> Lorem</p>
-          <p><strong>15</strong> Ipsum</p>
-          <p><strong>5</strong> Dolor</p>
-          <p><strong>2</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$19</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Pro</h1>
-        </div>
-        <div class="panel-body">
-          <p><strong>50</strong> Lorem</p>
-          <p><strong>25</strong> Ipsum</p>
-          <p><strong>10</strong> Dolor</p>
-          <p><strong>5</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$29</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Premium</h1>
-        </div>
-        <div class="panel-body">
-          <p><strong>100</strong> Lorem</p>
-          <p><strong>50</strong> Ipsum</p>
-          <p><strong>25</strong> Dolor</p>
-          <p><strong>10</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$49</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -658,8 +562,9 @@ Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
 <footer class="container-fluid text-center">
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
-  </a>
-  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
+  Made By Vasileios Ntinas (Stuff was copied and pasted from all over the internet)
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
 </footer>
 
 <script>
