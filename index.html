@@ -45,6 +45,14 @@
   .about-me {
     background-color: #eaf7ff;
   }
+  .contact-me {
+    background-color: #eaf7ff;
+  }
+  .contact-me-txt {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    color: black;
+  }
   .about-me-img {
     background-image: url("chip_img.jpg");
     background-position: center;
@@ -498,6 +506,16 @@
     padding-right: 0px;
     padding-left: 10px;
   }
+  .my-quotes {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .nav-imgs li>a {
+    padding-left: 0px;
+  }
+  .nav-imgs {
+    padding-right: 50px;
+  }
 
   /* Media queries - Responsive timeline on screens less than 600px wide */
   @media screen and (max-width: 600px) {
@@ -553,8 +571,14 @@
         <li><a href="#about">About Me</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#pubs">Publications</a></li>
-        <li><a href="#quotes">Quotes</a></li>
+        <!--<li><a href="#quotes">Quotes</a></li>-->
         <li><a href="#contact">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right nav-imgs">
+        <li><a href="mailto:vntinas@ee.duth.gr">vntinas@ee.duth.gr</a></li>
+        <li><a href="https://scholar.google.gr/citations?user=RCeprCUAAAAJ&hl=en" target="_blank"><img src="Google-Scholar-logo.png" width="20px"/></a></li>
+        <li><a href="https://www.linkedin.com/in/vasileios-ntinas-0a09bab6" target="_blank"><img src="linkedin.png" width="20px"/></a></li>
+        <li><a href="https://www.researchgate.net/profile/Vasileios_Ntinas2" target="_blank"><img src="researchgate.png" width="20px"/></a></li>
       </ul>
     </div>
   </div>
@@ -1012,30 +1036,31 @@
 </div>
 
 <!-- Container (Quotes Section) -->
-<div id="quotes" class="container-fluid text-center bg-grey">
+<!--<div id="quotes" class="container-fluid text-center">
+  <div class="container bg-grey my-quotes">
   <h2>Quoting....</h2>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-    <!-- Indicators -->
+
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
 
-    <!-- Wrapper for slides -->
+
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
+        <h4>"......................"<br><span>................</span></h4>
       </div>
       <div class="item">
-        <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
+        <h4>"......................"<br><span>................</span></h4>
       </div>
       <div class="item">
-        <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
+        <h4>"......................"<br><span>................</span></h4>
       </div>
     </div>
 
-    <!-- Left and right controls -->
+
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -1046,59 +1071,33 @@
     </a>
   </div>
 </div>
+</div>-->
 
 <!-- Container (Contact Section) -->
-<div id="contact" class="container-fluid">
-  <div class="row pubs">
+<div id="contact" class="container-fluid contact-me">
+  <div class="row contact-me-txt">
       <div class="col-md-8 col-md-offset-2">
-        <div class="row pubs-row">
-        <div class="col-md-6 pubs-left">
-        <h3>Let's connect</h3>
+        <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+        <h2>Let's connect</h2>
         <h4>Do not hesitate to contact me using this easy-peasy way</h4>
-
+        <h3>Available for:</h3>
+        <ul>
+          <li>Discussion on Research (not only about Memristors :D )</li>
+          <li>Asking for my research works (if, at a point of your life, you are really bored with everything on this planet)</li>
+          <li>Anything else!</li>
+        </ul>
+        <h1><a href="mailto:vntinas@ee.duth.gr">vntinas@ee.duth.gr</a></h1>
         </div>
-        <div class="col-md-6 pubs-right">
-            <div class="row">
-              <div class="col-sm-6 form-group">
-                <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-              </div>
-              <div class="col-sm-6 form-group">
-                <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-              </div>
-            </div>
-            <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-            <div class="row">
-              <div class="col-sm-12 form-group">
-                <button class="btn btn-default pull-right" type="submit">Send</button>
-              </div>
-            </div>
-        </div>
-        <div id="googleMap" style="width:100%;height:500px;"></div>
         </div>
       </div>
     </div>
   </div>
 
-<!-- Add Google Maps -->
-<script>
-function myMap() {
-var myCenter = new google.maps.LatLng(41.878114, -87.629798);
-var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-var marker = new google.maps.Marker({position:myCenter});
-marker.setMap(map);
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOMlTVv39ynzkKfPqqvF6ZIqm0iCKZJr0&callback=myMap"></script>
-<!--
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
-
 <footer class="container-fluid text-center">
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
-  Made By Vasileios Ntinas (Stuff was copied and pasted from all over the internet)
+  Built by Vasileios Ntinas (Stuff was copied and pasted from all over the internet)
       <span class="glyphicon glyphicon-chevron-up"></span>
     </a>
 </footer>
@@ -1139,6 +1138,7 @@ $(document).ready(function(){
   });
 })
 </script>
+
 
 </body>
 </html>
