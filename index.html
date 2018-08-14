@@ -47,13 +47,6 @@
   }
   .about-me-img {
     background-image: url("chip_img.jpg");
-    /*flex: 490 1 0%;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    top: 0px;
-    min-height: 842px;
-    position: relative;*/
     background-position: center;
     background-size: cover;
     opacity: 0.8;
@@ -86,6 +79,9 @@
   }
   .container-menu-tabs {
       padding: 0px 50px 0px 50px;
+  }
+  .edu {
+      background: repeating-linear-gradient(0deg, #0f5776, #4b6861 1%, #c66d0c 1%);
   }
   .bg-grey {
       background-color: #f6f6f6;
@@ -221,7 +217,7 @@
       color: #777;
   }
   footer a {
-      font: 500 16px 'Arizonia', Helvetica, sans-serif;
+      font: 500 16px, Helvetica, sans-serif;
       color: #777;
   }
   .slideanim {visibility:hidden;}
@@ -345,6 +341,194 @@
           width: 100%;
       }
   }
+  /* The actual timeline (the vertical ruler) */
+  .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: white;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+  }
+
+  /* Container around content */
+  .container-timeline {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+      margin-left: 0;
+      margin-right: 0;
+  }
+
+  /* The circles on the timeline */
+  .container-timeline::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -13px;
+      background-color: white;
+      border: 4px solid #FF9F55;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+  }
+
+  /* Place the container to the left */
+  .left-timeline {
+      left: 0;
+  }
+
+  /* Place the container to the right */
+  .right-timeline {
+      left: 50%;
+  }
+
+  /* Add arrows to the left container (pointing right) */
+  .left-timeline::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid white;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent white;
+  }
+
+  /* Add arrows to the right container (pointing left) */
+  .right-timeline::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+  }
+
+  /* Fix the circle for containers on the right side */
+  .right-timeline::after {
+      left: -12px;
+  }
+
+  /* The actual content */
+  .content-timeline {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      font: 350 normal normal 40px/1.375em 'Lato',sans-serif;
+  }
+  .content-timeline h1 {
+      margin: 10px 0px;
+      text-decoration: underline;
+      font-size: 28px;
+      text-transform: uppercase;
+  }
+  .content-timeline h2 {
+      margin: 0px 0px;
+      font-size: 22px;
+      text-transform: none;
+  }
+  .content-timeline h3 {
+      margin: 0px 0px;
+      font-size: 22px;
+      text-transform: capitalize;
+  }
+  .content-timeline h4 {
+      margin: 0px 0px 20px 0px;
+      font-size: 16px;
+      text-transform: capitalize;
+  }
+  .pubs {
+    background-color: #f5f5f5 !important;
+    font-family: 'Lato',sans-serif;
+    color: black;
+  }
+  .pubs h1 {
+    text-shadow: rgba(255, 255, 255, 0.6) 1px 1px 1px, rgba(0, 0, 0, 0.6) -1px -1px 1px;
+    font: 500 normal normal 20px/1.75em 'Lato',sans-serif;
+    background-color: #f5f5f5 !important;
+    text-transform: uppercase;
+  }
+  .pubs h3 {
+    font: 400 normal normal 22px/1.41em 'Lato',sans-serif;
+    background-color: #f5f5f5 !important;
+    text-transform: uppercase;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .pubs h4 {
+    font: 500 normal normal 15px/1.75em 'Lato',sans-serif;
+    background-color: #f5f5f5 !important;
+    text-transform: none;
+    margin-top: 0px;
+  }
+  .pubs p {
+    font: 500 normal normal 12px/1.75em 'Lato',sans-serif;
+    background-color: #f5f5f5 !important;
+    text-transform: none;
+  }
+  .pubs-row {
+    padding: 0px 15px;
+  }
+  .pubs-left {
+    padding-right: 10px;
+    padding-left: 0px;
+  }
+  .pubs-right {
+    padding-right: 0px;
+    padding-left: 10px;
+  }
+
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .timeline::after {
+      left: 31px;
+    }
+
+    /* Full-width containers */
+    .container-timeline {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .container-timeline::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .left-timeline::after, .right::after {
+      left: 15px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .right-timeline {
+      left: 0%;
+    }
+  }
   </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -389,7 +573,7 @@
 </div>
 
 <!-- Container (About Me Section) -->
-<div class="col-container about-me">
+<div id="about" class="col-container about-me">
   <div class="col">
     <div class="col-lg-8 col-lg-offset-2 about-me-txt">
       <h2>About Me</h2>
@@ -414,7 +598,7 @@
 </div>
 
 <!-- Container (Education Section) -->
-<div id="education" class="container-fluid about-me">
+<div id="education" class="container-fluid edu">
     <div class="row vertical-section-title">
       <div class="col-xs-12 text-center vertical-section-title-txt">
         <div class="text-center">
@@ -424,28 +608,42 @@
       </div>
     </div>
     <div class="row">
-        <div class="col-md-8 col-md-offset-2 about-me-txt">
-          <h2>About Me</h2>
-          <h4>
-            I was born in Xanthi, Greece on 7 November 1992. I received my Diploma (Master of Engineering) in Electrical and
-            Computer Engineering (ECE) from Department of ECE at Democritus University of Thrace (DUTh), Xanthi, Greece in July
-            of 2015 and I was 4th (~1-2%) of my class on time graduates. On May 2017, I completed my Master of Science (M.Sc.)
-            on “Microelectronics and Computer Systems” in the scientific field of "Biologically Inspired Electronic Circuit and
-            Systems" at the same department, with the main object of interest the Analogue and Digital Memristive Circuits. Currently,
-            I am pursuing my Ph.D. in the field of Emerging Computing with Memristors, under the co-supervision of Prof. Sirakoulis
-            (DUTh) and Prof. Rubio (Universitat Politècnica de Catalunya, UPC).
-            <br>
-            In general, I am a Circuit Design enthusiast, both Digital and Analogue, with high-quality theoretical background and I
-            have dealt a lot with PSpice circuit description and simulation. Also, I am really experienced in Software Programming
-            Languages and I have worked on FPGA implementations, too. I am interested in Emergent Computing, Cellular Automata, Cellular
-            Nonlinear/Neural/Nanoscale Networks, Neuromorphic Computing, Machine Learning and Novel Computing Technologies. Finally, I am
-            a fast learner and I have collaborated successfully with other researchers and students during all years of my studies.</h4>
+        <div class="col-md-8 col-md-offset-2">
+          <div class="timeline">
+  <div class="container container-timeline left left-timeline slideanim">
+    <div class="content content-timeline">
+      <h1>2017 - Now</h1>
+      <h2>Ph. D. Candidate</h2>
+      <h4>Democritus University of Thrace (DUTh)<br>Universitat Politecnica de Catalunya (UPC)</h4>
+      <h3>Scientific Area:</h3>
+      <h4>Emergent Computing with Memristors</h4>
+    </div>
+  </div>
+  <div class="container container-timeline right right-timeline slideanim">
+    <div class="content content-timeline">
+      <h1>October 2015 - March 2017</h1>
+      <h2>Master of Science (M. Sc.) on Microelectronics and Computer Systems</h2>
+      <h4>Democritus University of Thrace (DUTh)</h4>
+      <h3>Master Thesis:</h3>
+      <h4>Smart Bio-Inspired Electronic Systems with memristive devices</h4>
+    </div>
+  </div>
+  <div class="container container-timeline left left-timeline slideanim">
+    <div class="content content-timeline">
+      <h1>October 2010 - July 2015</h1>
+      <h2>Diploma in Electrical and Computer Engineering (D. Eng.)</h2>
+      <h4>Democritus University of Thrace (DUTh)</h4>
+      <h3>Diploma Thesis:</h3>
+      <h4>Study, design, and development of electronic circuits, inspired by nature, with learning capabilities, using circuit elements with memory (Memristors)</h4>
+    </div>
+  </div>
+</div>
         </div>
     </div>
 </div>
 
 <!-- Container (Publications Section) -->
-<div id="pubs" class="container-fluid about-me">
+<div id="pubs" class="container-fluid">
     <div class="row vertical-section-title">
       <div class="col-xs-12 text-center vertical-section-title-txt">
         <div class="text-center">
@@ -454,26 +652,332 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="col-md-8 col-md-offset-2 about-me-txt">
-          <h2>About Me</h2>
-          <h4>
-            I was born in Xanthi, Greece on 7 November 1992. I received my Diploma (Master of Engineering) in Electrical and
-            Computer Engineering (ECE) from Department of ECE at Democritus University of Thrace (DUTh), Xanthi, Greece in July
-            of 2015 and I was 4th (~1-2%) of my class on time graduates. On May 2017, I completed my Master of Science (M.Sc.)
-            on “Microelectronics and Computer Systems” in the scientific field of "Biologically Inspired Electronic Circuit and
-            Systems" at the same department, with the main object of interest the Analogue and Digital Memristive Circuits. Currently,
-            I am pursuing my Ph.D. in the field of Emerging Computing with Memristors, under the co-supervision of Prof. Sirakoulis
-            (DUTh) and Prof. Rubio (Universitat Politècnica de Catalunya, UPC).
-            <br>
-            In general, I am a Circuit Design enthusiast, both Digital and Analogue, with high-quality theoretical background and I
-            have dealt a lot with PSpice circuit description and simulation. Also, I am really experienced in Software Programming
-            Languages and I have worked on FPGA implementations, too. I am interested in Emergent Computing, Cellular Automata, Cellular
-            Nonlinear/Neural/Nanoscale Networks, Neuromorphic Computing, Machine Learning and Novel Computing Technologies. Finally, I am
-            a fast learner and I have collaborated successfully with other researchers and students during all years of my studies.</h4>
+    <div class="row pubs">
+        <div class="col-md-8 col-md-offset-2">
+          <h1>Articles in Journals</h1>
+          <div class="row pubs-row">
+          <div class="col-md-6 pubs-left">
+          <h3>EXPERIMENTAL STUDY OF ARTIFICIAL NEURAL NETWORKS USING A DIGITAL MEMRISTOR SIMULATOR</h3>
+          <h4><strong>Vasileios Ntinas</strong>, Ioannis Vourkas, Angel Abusleme, Georgios Ch. Sirakoulis, Antonio Rubio<br>
+          IEEE Transactions on Neural Networks and Learning Systems (TNNLS)<br>
+          DOI: <a href="https://doi.org/10.1109/TNNLS.2018.2791458" target="_blank">10.1109/TNNLS.2018.2791458</a><h4>
+
+          </div>
+          <div class="col-md-6 pubs-right">
+          <p>This paper presents a fully digital implementation of a memristor hardware (HW) simulator, as the core of an emulator,
+          based on a behavioral model of voltage-controlled threshold-type bipolar memristors. Compared to other analog solutions,
+          the proposed digital design is compact, easily reconfigurable, demonstrates very good matching with the mathematical model
+          on which it is based, and complies with all the required features for memristor emulators. We validated its functionality
+          using Altera Quartus II and ModelSim tools targeting low-cost yet powerful field-programmable gate array families. We
+          tested its suitability for complex memristive circuits as well as its synapse functioning in artificial neural networks,
+          implementing examples of associative memory and unsupervised learning of spatiotemporal correlations in parallel input
+          streams using a simplified spike-timing-dependent plasticity. We provide the full circuit schematics of all our digital
+          circuit designs and comment on the required HW resources and their scaling trends, thus presenting a design framework for
+          applications based on our HW simulator.</p>
+          </div>
+          </div>
+
+          <div class="row pubs-row">
+          <div class="col-md-6 pubs-left">
+          <h3>Closed-form analytical solution for on-switching dynamics in a TaO memristor</h3>
+          <h4>Alon Ascoli, <strong>Vasileios Ntinas</strong>, Ronald Tetzlaff, Georgios Ch. Sirakoulis<br>
+          IET Electronics Letters, vol. 50, no. 16, pp. 1125-1126, 2017<br>
+          DOI: <a href="https://ieeexplore.ieee.org/document/8011672/" target="_blank">10.1049/el.2017.1622</a><h4>
+
+          </div>
+          <div class="col-md-6 pubs-right">
+          <p>For the first time, the model of a physical nano-scale memristor is integrated analytically. A closed-form
+            expression for the time evolution of the device memristance during the turn-on process is mathematically derived.
+            The complexity of the inverse imaginary error function-based analytical formula clearly reflects the high degree
+            of nonlinearity in the nano-device switching kinetics, which may typically span several orders of magnitude and is
+            critically dependent on input and initial condition. The excellent agreement between the analytical solution and numerical
+            simulation results clearly demonstrates the correctness of the theoretical derivation. The introduction of this formula
+            represents the first step towards a systematic approach to circuit design with memristors.</p>
+          </div>
+          </div>
+
+          <div class="row pubs-row">
+          <div class="col-md-6 pubs-left">
+          <h3>EXPERIMENTAL STUDY OF ARTIFICIAL NEURAL NETWORKS USING A DIGITAL MEMRISTOR SIMULATOR</h3>
+          <h4><strong>Vasileios Ntinas</strong>, Ioannis Vourkas, Angel Abusleme, Georgios Ch. Sirakoulis, Antonio Rubio<br>
+          IEEE Transactions on Neural Networks and Learning Systems (TNNLS)<br>
+          DOI: <a href="" target="_blank">10.1109/TNNLS.2018.2791458</a><h4>
+
+          </div>
+          <div class="col-md-6 pubs-right">
+          <p>This paper presents a fully digital implementation of a memristor hardware (HW) simulator, as the core of an emulator,
+          based on a behavioral model of voltage-controlled threshold-type bipolar memristors. Compared to other analog solutions,
+          the proposed digital design is compact, easily reconfigurable, demonstrates very good matching with the mathematical model
+          on which it is based, and complies with all the required features for memristor emulators. We validated its functionality
+          using Altera Quartus II and ModelSim tools targeting low-cost yet powerful field-programmable gate array families. We
+          tested its suitability for complex memristive circuits as well as its synapse functioning in artificial neural networks,
+          implementing examples of associative memory and unsupervised learning of spatiotemporal correlations in parallel input
+          streams using a simplified spike-timing-dependent plasticity. We provide the full circuit schematics of all our digital
+          circuit designs and comment on the required HW resources and their scaling trends, thus presenting a design framework for
+          applications based on our HW simulator.</p>
+          </div>
+          </div>
+
+          <div class="row pubs-row">
+          <div class="col-md-6 pubs-left">
+          <h3>EXPERIMENTAL STUDY OF ARTIFICIAL NEURAL NETWORKS USING A DIGITAL MEMRISTOR SIMULATOR</h3>
+          <h4><strong>Vasileios Ntinas</strong>, Ioannis Vourkas, Angel Abusleme, Georgios Ch. Sirakoulis, Antonio Rubio<br>
+          IEEE Transactions on Neural Networks and Learning Systems (TNNLS)<br>
+          DOI: <a href="" target="_blank">10.1109/TNNLS.2018.2791458</a><h4>
+
+          </div>
+          <div class="col-md-6 pubs-right">
+          <p>This paper presents a fully digital implementation of a memristor hardware (HW) simulator, as the core of an emulator,
+          based on a behavioral model of voltage-controlled threshold-type bipolar memristors. Compared to other analog solutions,
+          the proposed digital design is compact, easily reconfigurable, demonstrates very good matching with the mathematical model
+          on which it is based, and complies with all the required features for memristor emulators. We validated its functionality
+          using Altera Quartus II and ModelSim tools targeting low-cost yet powerful field-programmable gate array families. We
+          tested its suitability for complex memristive circuits as well as its synapse functioning in artificial neural networks,
+          implementing examples of associative memory and unsupervised learning of spatiotemporal correlations in parallel input
+          streams using a simplified spike-timing-dependent plasticity. We provide the full circuit schematics of all our digital
+          circuit designs and comment on the required HW resources and their scaling trends, thus presenting a design framework for
+          applications based on our HW simulator.</p>
+          </div>
+          </div>
+
+          <div class="row pubs-row">
+          <div class="col-md-6 pubs-left">
+          <h3>EXPERIMENTAL STUDY OF ARTIFICIAL NEURAL NETWORKS USING A DIGITAL MEMRISTOR SIMULATOR</h3>
+          <h4><strong>Vasileios Ntinas</strong>, Ioannis Vourkas, Angel Abusleme, Georgios Ch. Sirakoulis, Antonio Rubio<br>
+          IEEE Transactions on Neural Networks and Learning Systems (TNNLS)<br>
+          DOI: <a href="" target="_blank">10.1109/TNNLS.2018.2791458</a><h4>
+
+          </div>
+          <div class="col-md-6 pubs-right">
+          <p>This paper presents a fully digital implementation of a memristor hardware (HW) simulator, as the core of an emulator,
+          based on a behavioral model of voltage-controlled threshold-type bipolar memristors. Compared to other analog solutions,
+          the proposed digital design is compact, easily reconfigurable, demonstrates very good matching with the mathematical model
+          on which it is based, and complies with all the required features for memristor emulators. We validated its functionality
+          using Altera Quartus II and ModelSim tools targeting low-cost yet powerful field-programmable gate array families. We
+          tested its suitability for complex memristive circuits as well as its synapse functioning in artificial neural networks,
+          implementing examples of associative memory and unsupervised learning of spatiotemporal correlations in parallel input
+          streams using a simplified spike-timing-dependent plasticity. We provide the full circuit schematics of all our digital
+          circuit designs and comment on the required HW resources and their scaling trends, thus presenting a design framework for
+          applications based on our HW simulator.</p>
+          </div>
+          </div>
+
+          <h1>Presentations at Conferences</h1>
+
+          <div class="row pubs-row">
+          <div class="col-md-6 pubs-left">
+          <h3>EXPERIMENTAL STUDY OF ARTIFICIAL NEURAL NETWORKS USING A DIGITAL MEMRISTOR SIMULATOR</h3>
+          <h4><strong>Vasileios Ntinas</strong>, Ioannis Vourkas, Angel Abusleme, Georgios Ch. Sirakoulis, Antonio Rubio<br>
+          IEEE Transactions on Neural Networks and Learning Systems (TNNLS)<br>
+          DOI: <a href="" target="_blank">10.1109/TNNLS.2018.2791458</a><h4>
+
+          </div>
+          <div class="col-md-6 pubs-right">
+          <p>This paper presents a fully digital implementation of a memristor hardware (HW) simulator, as the core of an emulator,
+          based on a behavioral model of voltage-controlled threshold-type bipolar memristors. Compared to other analog solutions,
+          the proposed digital design is compact, easily reconfigurable, demonstrates very good matching with the mathematical model
+          on which it is based, and complies with all the required features for memristor emulators. We validated its functionality
+          using Altera Quartus II and ModelSim tools targeting low-cost yet powerful field-programmable gate array families. We
+          tested its suitability for complex memristive circuits as well as its synapse functioning in artificial neural networks,
+          implementing examples of associative memory and unsupervised learning of spatiotemporal correlations in parallel input
+          streams using a simplified spike-timing-dependent plasticity. We provide the full circuit schematics of all our digital
+          circuit designs and comment on the required HW resources and their scaling trends, thus presenting a design framework for
+          applications based on our HW simulator.</p>
+          </div>
+          </div>
+
+
+
+          <div class="row pubs-row">
+          <div class="col-md-6 pubs-left">
+          <h3>EXPERIMENTAL STUDY OF ARTIFICIAL NEURAL NETWORKS USING A DIGITAL MEMRISTOR SIMULATOR</h3>
+          <h4><strong>Vasileios Ntinas</strong>, Ioannis Vourkas, Angel Abusleme, Georgios Ch. Sirakoulis, Antonio Rubio<br>
+          IEEE Transactions on Neural Networks and Learning Systems (TNNLS)<br>
+          DOI: <a href="" target="_blank">10.1109/TNNLS.2018.2791458</a><h4>
+
+          </div>
+          <div class="col-md-6 pubs-right">
+          <p>This paper presents a fully digital implementation of a memristor hardware (HW) simulator, as the core of an emulator,
+          based on a behavioral model of voltage-controlled threshold-type bipolar memristors. Compared to other analog solutions,
+          the proposed digital design is compact, easily reconfigurable, demonstrates very good matching with the mathematical model
+          on which it is based, and complies with all the required features for memristor emulators. We validated its functionality
+          using Altera Quartus II and ModelSim tools targeting low-cost yet powerful field-programmable gate array families. We
+          tested its suitability for complex memristive circuits as well as its synapse functioning in artificial neural networks,
+          implementing examples of associative memory and unsupervised learning of spatiotemporal correlations in parallel input
+          streams using a simplified spike-timing-dependent plasticity. We provide the full circuit schematics of all our digital
+          circuit designs and comment on the required HW resources and their scaling trends, thus presenting a design framework for
+          applications based on our HW simulator.</p>
+          </div>
+          </div>
+
+
+
+          <div class="row pubs-row">
+          <div class="col-md-6 pubs-left">
+          <h3>EXPERIMENTAL STUDY OF ARTIFICIAL NEURAL NETWORKS USING A DIGITAL MEMRISTOR SIMULATOR</h3>
+          <h4><strong>Vasileios Ntinas</strong>, Ioannis Vourkas, Angel Abusleme, Georgios Ch. Sirakoulis, Antonio Rubio<br>
+          IEEE Transactions on Neural Networks and Learning Systems (TNNLS)<br>
+          DOI: <a href="" target="_blank">10.1109/TNNLS.2018.2791458</a><h4>
+
+          </div>
+          <div class="col-md-6 pubs-right">
+          <p>This paper presents a fully digital implementation of a memristor hardware (HW) simulator, as the core of an emulator,
+          based on a behavioral model of voltage-controlled threshold-type bipolar memristors. Compared to other analog solutions,
+          the proposed digital design is compact, easily reconfigurable, demonstrates very good matching with the mathematical model
+          on which it is based, and complies with all the required features for memristor emulators. We validated its functionality
+          using Altera Quartus II and ModelSim tools targeting low-cost yet powerful field-programmable gate array families. We
+          tested its suitability for complex memristive circuits as well as its synapse functioning in artificial neural networks,
+          implementing examples of associative memory and unsupervised learning of spatiotemporal correlations in parallel input
+          streams using a simplified spike-timing-dependent plasticity. We provide the full circuit schematics of all our digital
+          circuit designs and comment on the required HW resources and their scaling trends, thus presenting a design framework for
+          applications based on our HW simulator.</p>
+          </div>
+          </div>
+
+
+
+          <div class="row pubs-row">
+          <div class="col-md-6 pubs-left">
+          <h3>EXPERIMENTAL STUDY OF ARTIFICIAL NEURAL NETWORKS USING A DIGITAL MEMRISTOR SIMULATOR</h3>
+          <h4><strong>Vasileios Ntinas</strong>, Ioannis Vourkas, Angel Abusleme, Georgios Ch. Sirakoulis, Antonio Rubio<br>
+          IEEE Transactions on Neural Networks and Learning Systems (TNNLS)<br>
+          DOI: <a href="" target="_blank">10.1109/TNNLS.2018.2791458</a><h4>
+
+          </div>
+          <div class="col-md-6 pubs-right">
+          <p>This paper presents a fully digital implementation of a memristor hardware (HW) simulator, as the core of an emulator,
+          based on a behavioral model of voltage-controlled threshold-type bipolar memristors. Compared to other analog solutions,
+          the proposed digital design is compact, easily reconfigurable, demonstrates very good matching with the mathematical model
+          on which it is based, and complies with all the required features for memristor emulators. We validated its functionality
+          using Altera Quartus II and ModelSim tools targeting low-cost yet powerful field-programmable gate array families. We
+          tested its suitability for complex memristive circuits as well as its synapse functioning in artificial neural networks,
+          implementing examples of associative memory and unsupervised learning of spatiotemporal correlations in parallel input
+          streams using a simplified spike-timing-dependent plasticity. We provide the full circuit schematics of all our digital
+          circuit designs and comment on the required HW resources and their scaling trends, thus presenting a design framework for
+          applications based on our HW simulator.</p>
+          </div>
+          </div>
+
+
+
+          <div class="row pubs-row">
+          <div class="col-md-6 pubs-left">
+          <h3>EXPERIMENTAL STUDY OF ARTIFICIAL NEURAL NETWORKS USING A DIGITAL MEMRISTOR SIMULATOR</h3>
+          <h4><strong>Vasileios Ntinas</strong>, Ioannis Vourkas, Angel Abusleme, Georgios Ch. Sirakoulis, Antonio Rubio<br>
+          IEEE Transactions on Neural Networks and Learning Systems (TNNLS)<br>
+          DOI: <a href="" target="_blank">10.1109/TNNLS.2018.2791458</a><h4>
+
+          </div>
+          <div class="col-md-6 pubs-right">
+          <p>This paper presents a fully digital implementation of a memristor hardware (HW) simulator, as the core of an emulator,
+          based on a behavioral model of voltage-controlled threshold-type bipolar memristors. Compared to other analog solutions,
+          the proposed digital design is compact, easily reconfigurable, demonstrates very good matching with the mathematical model
+          on which it is based, and complies with all the required features for memristor emulators. We validated its functionality
+          using Altera Quartus II and ModelSim tools targeting low-cost yet powerful field-programmable gate array families. We
+          tested its suitability for complex memristive circuits as well as its synapse functioning in artificial neural networks,
+          implementing examples of associative memory and unsupervised learning of spatiotemporal correlations in parallel input
+          streams using a simplified spike-timing-dependent plasticity. We provide the full circuit schematics of all our digital
+          circuit designs and comment on the required HW resources and their scaling trends, thus presenting a design framework for
+          applications based on our HW simulator.</p>
+          </div>
+          </div>
+
+
+
+          <div class="row pubs-row">
+          <div class="col-md-6 pubs-left">
+          <h3>EXPERIMENTAL STUDY OF ARTIFICIAL NEURAL NETWORKS USING A DIGITAL MEMRISTOR SIMULATOR</h3>
+          <h4><strong>Vasileios Ntinas</strong>, Ioannis Vourkas, Angel Abusleme, Georgios Ch. Sirakoulis, Antonio Rubio<br>
+          IEEE Transactions on Neural Networks and Learning Systems (TNNLS)<br>
+          DOI: <a href="" target="_blank">10.1109/TNNLS.2018.2791458</a><h4>
+
+          </div>
+          <div class="col-md-6 pubs-right">
+          <p>This paper presents a fully digital implementation of a memristor hardware (HW) simulator, as the core of an emulator,
+          based on a behavioral model of voltage-controlled threshold-type bipolar memristors. Compared to other analog solutions,
+          the proposed digital design is compact, easily reconfigurable, demonstrates very good matching with the mathematical model
+          on which it is based, and complies with all the required features for memristor emulators. We validated its functionality
+          using Altera Quartus II and ModelSim tools targeting low-cost yet powerful field-programmable gate array families. We
+          tested its suitability for complex memristive circuits as well as its synapse functioning in artificial neural networks,
+          implementing examples of associative memory and unsupervised learning of spatiotemporal correlations in parallel input
+          streams using a simplified spike-timing-dependent plasticity. We provide the full circuit schematics of all our digital
+          circuit designs and comment on the required HW resources and their scaling trends, thus presenting a design framework for
+          applications based on our HW simulator.</p>
+          </div>
+          </div>
+
+
+
+          <div class="row pubs-row">
+          <div class="col-md-6 pubs-left">
+          <h3>EXPERIMENTAL STUDY OF ARTIFICIAL NEURAL NETWORKS USING A DIGITAL MEMRISTOR SIMULATOR</h3>
+          <h4><strong>Vasileios Ntinas</strong>, Ioannis Vourkas, Angel Abusleme, Georgios Ch. Sirakoulis, Antonio Rubio<br>
+          IEEE Transactions on Neural Networks and Learning Systems (TNNLS)<br>
+          DOI: <a href="" target="_blank">10.1109/TNNLS.2018.2791458</a><h4>
+
+          </div>
+          <div class="col-md-6 pubs-right">
+          <p>This paper presents a fully digital implementation of a memristor hardware (HW) simulator, as the core of an emulator,
+          based on a behavioral model of voltage-controlled threshold-type bipolar memristors. Compared to other analog solutions,
+          the proposed digital design is compact, easily reconfigurable, demonstrates very good matching with the mathematical model
+          on which it is based, and complies with all the required features for memristor emulators. We validated its functionality
+          using Altera Quartus II and ModelSim tools targeting low-cost yet powerful field-programmable gate array families. We
+          tested its suitability for complex memristive circuits as well as its synapse functioning in artificial neural networks,
+          implementing examples of associative memory and unsupervised learning of spatiotemporal correlations in parallel input
+          streams using a simplified spike-timing-dependent plasticity. We provide the full circuit schematics of all our digital
+          circuit designs and comment on the required HW resources and their scaling trends, thus presenting a design framework for
+          applications based on our HW simulator.</p>
+          </div>
+          </div>
+
+
+
+          <div class="row pubs-row">
+          <div class="col-md-6 pubs-left">
+          <h3>EXPERIMENTAL STUDY OF ARTIFICIAL NEURAL NETWORKS USING A DIGITAL MEMRISTOR SIMULATOR</h3>
+          <h4><strong>Vasileios Ntinas</strong>, Ioannis Vourkas, Angel Abusleme, Georgios Ch. Sirakoulis, Antonio Rubio<br>
+          IEEE Transactions on Neural Networks and Learning Systems (TNNLS)<br>
+          DOI: <a href="" target="_blank">10.1109/TNNLS.2018.2791458</a><h4>
+
+          </div>
+          <div class="col-md-6 pubs-right">
+          <p>This paper presents a fully digital implementation of a memristor hardware (HW) simulator, as the core of an emulator,
+          based on a behavioral model of voltage-controlled threshold-type bipolar memristors. Compared to other analog solutions,
+          the proposed digital design is compact, easily reconfigurable, demonstrates very good matching with the mathematical model
+          on which it is based, and complies with all the required features for memristor emulators. We validated its functionality
+          using Altera Quartus II and ModelSim tools targeting low-cost yet powerful field-programmable gate array families. We
+          tested its suitability for complex memristive circuits as well as its synapse functioning in artificial neural networks,
+          implementing examples of associative memory and unsupervised learning of spatiotemporal correlations in parallel input
+          streams using a simplified spike-timing-dependent plasticity. We provide the full circuit schematics of all our digital
+          circuit designs and comment on the required HW resources and their scaling trends, thus presenting a design framework for
+          applications based on our HW simulator.</p>
+          </div>
+          </div>
+
+
+
+          <div class="row pubs-row">
+          <div class="col-md-6 pubs-left">
+          <h3>EXPERIMENTAL STUDY OF ARTIFICIAL NEURAL NETWORKS USING A DIGITAL MEMRISTOR SIMULATOR</h3>
+          <h4><strong>Vasileios Ntinas</strong>, Ioannis Vourkas, Angel Abusleme, Georgios Ch. Sirakoulis, Antonio Rubio<br>
+          IEEE Transactions on Neural Networks and Learning Systems (TNNLS)<br>
+          DOI: <a href="" target="_blank">10.1109/TNNLS.2018.2791458</a><h4>
+
+          </div>
+          <div class="col-md-6 pubs-right">
+          <p>This paper presents a fully digital implementation of a memristor hardware (HW) simulator, as the core of an emulator,
+          based on a behavioral model of voltage-controlled threshold-type bipolar memristors. Compared to other analog solutions,
+          the proposed digital design is compact, easily reconfigurable, demonstrates very good matching with the mathematical model
+          on which it is based, and complies with all the required features for memristor emulators. We validated its functionality
+          using Altera Quartus II and ModelSim tools targeting low-cost yet powerful field-programmable gate array families. We
+          tested its suitability for complex memristive circuits as well as its synapse functioning in artificial neural networks,
+          implementing examples of associative memory and unsupervised learning of spatiotemporal correlations in parallel input
+          streams using a simplified spike-timing-dependent plasticity. We provide the full circuit schematics of all our digital
+          circuit designs and comment on the required HW resources and their scaling trends, thus presenting a design framework for
+          applications based on our HW simulator.</p>
+          </div>
+          </div>
         </div>
-      </div>
     </div>
 </div>
 
