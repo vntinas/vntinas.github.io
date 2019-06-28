@@ -469,6 +469,8 @@
     background-color: #f5f5f5 !important;
     font-family: 'Lato',sans-serif;
     color: black;
+
+    padding-left: 10px;
   }
   .pubs h1 {
     text-shadow: rgba(255, 255, 255, 0.6) 1px 1px 1px, rgba(0, 0, 0, 0.6) -1px -1px 1px;
@@ -488,6 +490,7 @@
     background-color: #f5f5f5 !important;
     text-transform: none;
     margin-top: 0px;
+    margin-bottom: 0px;
   }
   .pubs p {
     font: 500 normal normal 12px/1.75em 'Lato',sans-serif;
@@ -498,6 +501,7 @@
   }
   .pubs-row {
     padding: 0px 15px;
+    margin-bottom: 20px;
   }
   .pubs-left {
     padding-right: 10px;
@@ -505,7 +509,7 @@
   }
   .pubs-right {
     padding-right: 0px;
-    padding-left: 10px;
+    padding-left: 0px;
   }
   .my-quotes {
     margin-top: 50px;
@@ -684,14 +688,54 @@
           <h1>Articles in Journals</h1>
           <div class="row pubs-row">
           <div class="col-md-6 pubs-left">
+          <h3>A COMPLETE ANALYTICAL SOLUTION FOR THE ON AND OFF DYNAMIC EQUATIONS OF A TAO MEMRISTOR</h3>
+          <h4><strong>Vasileios Ntinas</strong>, Alon Ascoli, Ronald Tetzlaff, Georgios Ch. Sirakoulis<br>
+          IEEE Transactions on Circuits and Systems II: Express Briefs, vol. 66, no. 4, pp. 682-686, 2019<br>
+          DOI: <a href="https://doi.org/10.1109/TCSII.2018.2869920" target="_blank">10.1109/TCSII.2018.2869920</a></h4>
+
+          </div>
+          <div class="col-sm-4 col-sm-offset-1 pubs-right">
+            <a href="https://www.scimagojr.com/journalsearch.php?q=9500153930&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank" target="_blank">
+              <img border="0" src="https://www.scimagojr.com/journal_img.php?id=9500153930" alt="SCImago Journal &amp; Country Rank"  /></a>
+          </div>
+
+          <div class="col-md-12 pubs-left">
+          <button type="button" class="btn" data-toggle="collapse" data-target="#j7">Abstract</button>  <p  id="j7" class="collapse col-md-12">
+            In this brief we provide a complete analytical model for the time evolution of the state of a real-world memristor
+            under any dc stimulus and for all initial conditions. The analytical dc model is derived through the application of
+            mathematical techniques to Strachan's accurate mathematical description of a tantalum oxide nano-device from Hewlett
+            Packard Labs. Under positive dc inputs the state equation of the Strachan model can be solved analytically, providing
+            a closed-form expression for the device memory state response. However, to the best of our knowledge, the analytical
+            integration of the state equation of the Strachan model under dc inputs of negative polarity is an unsolved mathematical
+            problem. In order to bypass this issue, the state evolution function is first expanded in a series of Lagrange polynomials,
+            which reproduces accurately the original model predictions on the device off-switching kinetics. The solution to the resulting
+            state equation approximation may then be computed analytically by applying methods from the field of mathematics. Our
+            full analytical model matches both qualitatively and quantitatively the tantalum oxide memristor response captured by
+            the original differential algebraic equation set to typical stimuli of interest such as symmetric and asymmetric pulse
+            excitations. It is further insensitive to the convergence issues that typically arise in the numerical integration of the
+            original model, and may be easily integrated into software programs for circuit synthesis, providing designers with a
+            reliable tool for exploratory studies on the capability of a certain circuit topology to satisfy given design specifications.
+</p>
+        </div>
+          </div>
+
+
+          <div class="row pubs-row">
+          <div class="col-md-6 pubs-left">
           <h3>EXPERIMENTAL STUDY OF ARTIFICIAL NEURAL NETWORKS USING A DIGITAL MEMRISTOR SIMULATOR</h3>
           <h4><strong>Vasileios Ntinas</strong>, Ioannis Vourkas, Angel Abusleme, Georgios Ch. Sirakoulis, Antonio Rubio<br>
           IEEE Transactions on Neural Networks and Learning Systems (TNNLS)<br>
           DOI: <a href="https://doi.org/10.1109/TNNLS.2018.2791458" target="_blank">10.1109/TNNLS.2018.2791458</a></h4>
 
           </div>
-          <div class="col-md-6 pubs-right">
-          <p>This paper presents a fully digital implementation of a memristor hardware (HW) simulator, as the core of an emulator,
+          <div class="col-sm-4 col-sm-offset-1 pubs-right">
+            <a href="https://www.scimagojr.com/journalsearch.php?q=21100235616&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank" target="_blank">
+              <img border="0" src="https://www.scimagojr.com/journal_img.php?id=21100235616" alt="SCImago Journal &amp; Country Rank"  /></a>
+          </div>
+
+          <div class="col-md-12 pubs-left">
+          <button type="button" class="btn" data-toggle="collapse" data-target="#j6">Abstract</button>  <p  id="j6" class="collapse col-md-12">
+            This paper presents a fully digital implementation of a memristor hardware (HW) simulator, as the core of an emulator,
           based on a behavioral model of voltage-controlled threshold-type bipolar memristors. Compared to other analog solutions,
           the proposed digital design is compact, easily reconfigurable, demonstrates very good matching with the mathematical model
           on which it is based, and complies with all the required features for memristor emulators. We validated its functionality
@@ -701,8 +745,9 @@
           streams using a simplified spike-timing-dependent plasticity. We provide the full circuit schematics of all our digital
           circuit designs and comment on the required HW resources and their scaling trends, thus presenting a design framework for
           applications based on our HW simulator.</p>
+        </div>
           </div>
-          </div>
+
 
           <div class="row pubs-row">
           <div class="col-md-6 pubs-left">
@@ -712,8 +757,14 @@
           DOI: <a href="https://ieeexplore.ieee.org/document/8011672/" target="_blank">10.1049/el.2017.1622</a></h4>
 
           </div>
-          <div class="col-md-6 pubs-right">
-          <p>For the first time, the model of a physical nano-scale memristor is integrated analytically. A closed-form
+          <div class="col-sm-4 col-sm-offset-1 pubs-right">
+            <a href="https://www.scimagojr.com/journalsearch.php?q=24918&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank" target="_blank">
+              <img border="0" src="https://www.scimagojr.com/journal_img.php?id=24918" alt="SCImago Journal &amp; Country Rank"  /></a>
+          </div>
+
+          <div class="col-md-12 pubs-left">
+          <button type="button" class="btn" data-toggle="collapse" data-target="#j5">Abstract</button>  <p  id="j5" class="collapse col-md-12">
+            For the first time, the model of a physical nano-scale memristor is integrated analytically. A closed-form
             expression for the time evolution of the device memristance during the turn-on process is mathematically derived.
             The complexity of the inverse imaginary error function-based analytical formula clearly reflects the high degree
             of nonlinearity in the nano-device switching kinetics, which may typically span several orders of magnitude and is
@@ -731,8 +782,14 @@
           DOI: <a href="https://ieeexplore.ieee.org/document/7911226/" target="_blank">10.1109/TCSI.2017.2692519</a></h4>
 
           </div>
-          <div class="col-md-6 pubs-right">
-          <p>Nonlinear circuits may be synchronized with interconnections that evolve in time incorporating mechanisms of adaptation
+          <div class="col-sm-4 col-sm-offset-1 pubs-right">
+            <a href="https://www.scimagojr.com/journalsearch.php?q=11000153733&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank" target="_blank">
+              <img border="0" src="https://www.scimagojr.com/journal_img.php?id=11000153733" alt="SCImago Journal &amp; Country Rank"  /></a>
+          </div>
+
+          <div class="col-md-12 pubs-left">
+          <button type="button" class="btn" data-toggle="collapse" data-target="#j4">Abstract</button>  <p  id="j4" class="collapse col-md-12">
+            Nonlinear circuits may be synchronized with interconnections that evolve in time incorporating mechanisms of adaptation
             found in many biological systems. Such dynamics in the links is efficiently implemented in electronic devices by using memristors.
             However, the approach requires a massive amount of interconnections (of the order of N<sup>2</sup>, where N is the number of nonlinear
             circuits to be synchronized). This issue is solved in this paper by adopting a memristor crossbar architecture for adaptive
@@ -751,8 +808,14 @@
           DOI: <a href="http://iopscience.iop.org/article/10.1088/1361-6463/aa614d/meta" target="_blank">10.1088/1361-6463/aa614d</a></h4>
 
           </div>
-          <div class="col-md-6 pubs-right">
-          <p>Slime mold <i>Physarum polycephalum</i> optimizes its foraging behaviour by minimizing the distances between the sources of nutrients
+          <div class="col-sm-4 col-sm-offset-1 pubs-right">
+            <a href="https://www.scimagojr.com/journalsearch.php?q=28570&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank" target="_blank">
+              <img border="0" src="https://www.scimagojr.com/journal_img.php?id=28570" alt="SCImago Journal &amp; Country Rank"  /></a>
+          </div>
+
+          <div class="col-md-12 pubs-left">
+          <button type="button" class="btn" data-toggle="collapse" data-target="#j3">Abstract</button>  <p  id="j3" class="collapse col-md-12">
+            Slime mold <i>Physarum polycephalum</i> optimizes its foraging behaviour by minimizing the distances between the sources of nutrients
             it spans. When two sources of nutrients are present, the slime mold connects the sources, with its protoplasmic tubes, along the
             shortest path. We present a two-dimensional mesh grid memristor based model as an approach to emulate Physarum's foraging strategy,
             which includes space exploration and reinforcement of the optimally formed interconnection network in the presence of multiple aliment
@@ -771,8 +834,14 @@
           DOI: <a href="https://ieeexplore.ieee.org/document/7534815/" target="_blank">10.1109/TCSI.2016.2566278</a></h4>
 
           </div>
-          <div class="col-md-6 pubs-right">
-          <p>The ability of slime mould to learn and adapt to periodic changes in its environment inspired scientists to develop behavioral
+          <div class="col-sm-4 col-sm-offset-1 pubs-right">
+            <a href="https://www.scimagojr.com/journalsearch.php?q=11000153733&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank" target="_blank">
+              <img border="0" src="https://www.scimagojr.com/journal_img.php?id=11000153733" alt="SCImago Journal &amp; Country Rank"  /></a>
+          </div>
+
+          <div class="col-md-12 pubs-left">
+          <button type="button" class="btn" data-toggle="collapse" data-target="#j2">Abstract</button>  <p  id="j2" class="collapse col-md-12">
+            The ability of slime mould to learn and adapt to periodic changes in its environment inspired scientists to develop behavioral
             memristor-based circuit models of its memory organization. The computing abilities of slime mould Physarum polycephalum have been
             used in several applications, including to solve mazes. This work presents a circuit-level bio-inspired maze-solving approach via
             an electronic model of the oscillatory internal motion mechanism of slime mould, which emulates the local signal propagation and
@@ -792,8 +861,14 @@
           DOI: <a href="https://www.sciencedirect.com/science/article/pii/S1877750316301260" target="_blank">10.1016/j.jocs.2016.08.003</a></h4>
 
           </div>
-          <div class="col-md-6 pubs-right">
-          <p>Cellular Automata (CA) have been introduced many decades ago as one of the most efficient parallel computational models able to simulate
+          <div class="col-sm-4 col-sm-offset-1 pubs-right">
+            <a href="https://www.scimagojr.com/journalsearch.php?q=19700174607&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank" target="_blank">
+              <img border="0" src="https://www.scimagojr.com/journal_img.php?id=19700174607" alt="SCImago Journal &amp; Country Rank"  /></a>
+          </div>
+
+          <div class="col-md-12 pubs-left">
+          <button type="button" class="btn" data-toggle="collapse" data-target="#j1">Abstract</button>  <p  id="j1" class="collapse col-md-12">
+            Cellular Automata (CA) have been introduced many decades ago as one of the most efficient parallel computational models able to simulate
             various physical processes and systems where the interactions are local. In this paper, we are trying to advance the application of CA in
             modeling wildfires by accounting for the fuzziness intrinsic to the numerous environmental variables and mechanisms engaged with the
             emergence of the phenomenon itself. The proposed Fuzzy CA (FCA) model adopts a data-driven approach, based on evolutionary optimization,
