@@ -1337,6 +1337,8 @@ function showSlides(n) {
 
 <script>
 var x, y, myObj;
+$.getJSON( "/data.json", function( myObj ) {
+console.log(myObj);
 myObj = {
   "journals": [
     { "j_id":"7",
