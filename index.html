@@ -11,7 +11,6 @@
   <link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="/json.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
   body {
@@ -757,7 +756,6 @@
         </div>
       </div>
     </div>
-    <div id="text"></div>
     <div class="row pubs">
         <div class="col-md-8 col-md-offset-2">
           <h1>Articles in Journals</h1>
@@ -1337,7 +1335,7 @@ function showSlides(n) {
 }
 </script>
 
-      <script>
+<script>
 var data, x, myObj;
 myObj = {
   "journals": [
@@ -1356,20 +1354,20 @@ myObj = {
  }
 for (i in myObj.journals) {
 	x += '<div class="row pubs-row">';
-    x += '<div class="col-md-6 pubs-left">'
-    x += '<h3>' + myObj.journals[i].title + +myObj.journals[i].sjr_id+ "</h3>";
-    x += '<h4>' + myObj.journals[i].authors + "<br>";
-    x += myObj.journals[i].details + "<br>";
-    x += 'DOI: <a href="https://doi.org/' + myObj.journals[i].doi + '" target="_blank">' + myObj.journals[i].doi + '</a></h4></div>';
-    x += '<div class="col-sm-4 col-sm-offset-1 pubs-right">';
-    x += '<a href="https://www.scimagojr.com/journalsearch.php?q=' + myObj.journals[i].sjr_id + '&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank" target="_blank">';
-    x += '<img border="0" src="https://www.scimagojr.com/journal_img.php?id=' + myObj.journals[i].sjr_id + '" alt="SCImago Journal &amp; Country Rank"/></a>';
-    x += '</div>';
+    	x += '<div class="col-md-6 pubs-left">'
+    	x += '<h3>' + myObj.journals[i].title + "</h3>";
+	x += '<h4>' + myObj.journals[i].authors + "<br>";
+	x += myObj.journals[i].details + "<br>";
+	x += 'DOI: <a href="https://doi.org/' + myObj.journals[i].doi + '" target="_blank">' + myObj.journals[i].doi + '</a></h4></div>';
+	x += '<div class="col-sm-4 col-sm-offset-1 pubs-right">';
+	x += '<a href="https://www.scimagojr.com/journalsearch.php?q=' + myObj.journals[i].sjr_id + '&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank" target="_blank">';
+	x += '<img border="0" src="https://www.scimagojr.com/journal_img.php?id=' + myObj.journals[i].sjr_id + '" alt="SCImago Journal &amp; Country Rank"/></a>';
+	x += '</div>';
 	x += '<div class="col-md-12 pubs-left">';
-    x += '<button type="button" class="btn" data-toggle="collapse" data-target="#j7">Abstract</button> ';
-    x += '<p  id="j7" class="collapse col-md-12">' + myObj.journals[i].abstract + '</p>';
-    x += '</div>'
-    x += '</div>';
+	x += '<button type="button" class="btn" data-toggle="collapse" data-target="#j7">Abstract</button> ';
+	x += '<p  id="j7" class="collapse col-md-12">' + myObj.journals[i].abstract + '</p>';
+	x += '</div>'
+	x += '</div>';
 	}
 
 document.getElementById("my_J_generator").innerHTML += x;
