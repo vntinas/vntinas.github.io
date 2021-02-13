@@ -761,6 +761,7 @@
     <div class="row pubs">
         <div class="col-md-8 col-md-offset-2">
           <h1>Articles in Journals</h1>
+          <div id="my_J_generator"></div>
           <div class="row pubs-row">
           <div class="col-md-6 pubs-left">
           <h3>A COMPLETE ANALYTICAL SOLUTION FOR THE ON AND OFF DYNAMIC EQUATIONS OF A TAO MEMRISTOR</h3>
@@ -1336,6 +1337,43 @@ function showSlides(n) {
 }
 </script>
 
+      <script>
+var data, x, myObj;
+myObj = {
+  "journals": [
+    { "title":"A COMPLETE ANALYTICAL SOLUTION FOR THE ON AND OFF DYNAMIC EQUATIONS OF A TAO MEMRISTOR",
+    "authors":"<strong>Vasileios Ntinas</strong>, Alon Ascoli, Ronald Tetzlaff, Georgios Ch. Sirakoulis",
+    "details":"IEEE Transactions on Circuits and Systems II: Express Briefs, vol. 66, no. 4, pp. 682-686, 2019",
+    "doi":"10.1109/TCSII.2018.2869920",
+    "sjr_id":"9500153930",
+    "abstract":"In this brief we provide a complete analytical model for the time evolution of the state of a real-world memristor under any dc stimulus and for all initial conditions. The analytical dc model is derived through the application of mathematical techniques to Strachan's accurate mathematical description of a tantalum oxide nano-device from Hewlett Packard Labs. Under positive dc inputs the state equation of the Strachan model can be solved analytically, providing a closed-form expression for the device memory state response. However, to the best of our knowledge, the analytical integration of the state equation of the Strachan model under dc inputs of negative polarity is an unsolved mathematical problem. In order to bypass this issue, the state evolution function is first expanded in a series of Lagrange polynomials, which reproduces accurately the original model predictions on the device off-switching kinetics. The solution to the resulting state equation approximation may then be computed analytically by applying methods from the field of mathematics. Our full analytical model matches both qualitatively and quantitatively the tantalum oxide memristor response captured by the original differential algebraic equation set to typical stimuli of interest such as symmetric and asymmetric pulse excitations. It is further insensitive to the convergence issues that typically arise in the numerical integration of the original model, and may be easily integrated into software programs for circuit synthesis, providing designers with a reliable tool for exploratory studies on the capability of a certain circuit topology to satisfy given design specifications."}
+  ],
+  "conferences": [
+    { "name":"Takis", "models":[ "Fiesta", "Focus", "Mustang" ] },
+    { "name":"OLE", "models":[ "320", "X3", "X5" ] },
+    { "name":"ASE ME", "models":[ "500", "Panda" ] }
+  ]
+ }
+for (i in myObj.journals) {
+	x += '<div class="row pubs-row">';
+    x += '<div class="col-md-6 pubs-left">'
+    x += '<h3>' + myObj.journals[i].title + +myObj.journals[i].sjr_id+ "</h3>";
+    x += '<h4>' + myObj.journals[i].authors + "<br>";
+    x += myObj.journals[i].details + "<br>";
+    x += 'DOI: <a href="https://doi.org/' + myObj.journals[i].doi + '" target="_blank">' + myObj.journals[i].doi + '</a></h4></div>';
+    x += '<div class="col-sm-4 col-sm-offset-1 pubs-right">';
+    x += '<a href="https://www.scimagojr.com/journalsearch.php?q=' + myObj.journals[i].sjr_id + '&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank" target="_blank">';
+    x += '<img border="0" src="https://www.scimagojr.com/journal_img.php?id=' + myObj.journals[i].sjr_id + '" alt="SCImago Journal &amp; Country Rank"/></a>';
+    x += '</div>';
+	x += '<div class="col-md-12 pubs-left">';
+    x += '<button type="button" class="btn" data-toggle="collapse" data-target="#j7">Abstract</button> ';
+    x += '<p  id="j7" class="collapse col-md-12">' + myObj.journals[i].abstract + '</p>';
+    x += '</div>'
+    x += '</div>';
+	}
+
+document.getElementById("my_J_generator").innerHTML += x;
+</script>
 
 </body>
 </html>
