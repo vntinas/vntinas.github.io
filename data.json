@@ -1,4 +1,5 @@
 {
+  "text" : "Text supplied in the JSON file",
   "journals": [
     { "j_id":"7",
     "title":"A COMPLETE ANALYTICAL SOLUTION FOR THE ON AND OFF DYNAMIC EQUATIONS OF A TAO MEMRISTOR",
