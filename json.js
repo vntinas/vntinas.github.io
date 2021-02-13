@@ -2,7 +2,7 @@ $().ready(function(){
     $.getJSON( "/data.json", function( myObj ) {
     var x, y;
     console.log(myObj);
-    $("#my_J_generator").html(data["text"]);
+    $("#my_J_generator").html(myObj["text"]);
     x = 'ole';
     for (i in myObj.journals) {
         x += '<div class="row pubs-row">';
