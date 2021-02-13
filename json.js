@@ -1,6 +1,9 @@
 $().ready(function(){
     $.getJSON( "/data.json", function( data ) {
     console.log(data);
-    $("#text").html(data["text"]);
+    
+    for (x in data) {
+        $("#text").html(x["firstName"]);
+    }
   });
 });
