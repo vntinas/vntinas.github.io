@@ -2,8 +2,7 @@ $().ready(function(){
     $.getJSON( "/data.json", function( myObj ) {
     var x, y;
     console.log(myObj);
-    $("#my_J_generator").html(myObj["text"]);
-    x = 'ole';
+    x = '';
     for (i in myObj.journals) {
         x += '<div class="row pubs-row">';
         x += '<div class="col-md-6 pubs-left">'
@@ -23,7 +22,7 @@ $().ready(function(){
         }
     document.getElementById("my_J_generator").innerHTML = x;
 
-    y = 'ole';
+    y = '';
     for (i in myObj.conferences) {
         y += '<div class="row pubs-row">';
         y += '<div class="col-md-6 pubs-left">'
