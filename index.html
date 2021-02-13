@@ -11,6 +11,7 @@
   <link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/json.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
   body {
@@ -1339,7 +1340,7 @@ function showSlides(n) {
 var x, y, myObj;
 $.getJSON( "/data.json", function( myObj ) {
 console.log(myObj);
-x = '';
+x = 'ole';
 for (i in myObj.journals) {
 	x += '<div class="row pubs-row">';
     x += '<div class="col-md-6 pubs-left">'
@@ -1359,7 +1360,7 @@ for (i in myObj.journals) {
 	}
 document.getElementById("my_J_generator").innerHTML = x;
 
-y = '';
+y = 'ole';
 for (i in myObj.conferences) {
 	y += '<div class="row pubs-row">';
     y += '<div class="col-md-6 pubs-left">'
