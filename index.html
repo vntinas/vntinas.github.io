@@ -957,7 +957,7 @@
           </div>
 
           <h1>Presentations at Conferences</h1>
-
+	  <div id="my_C_generator"></div>
           <div class="row pubs-row">
           <div class="col-md-6 pubs-left">
           <h3>Future and Emergent Materials and Devices for Resistive Switching</h3>
@@ -1336,7 +1336,7 @@ function showSlides(n) {
 </script>
 
 <script>
-var x, myObj;
+var x, y, myObj;
 x = '';
 myObj = {
   "journals": [
@@ -1372,6 +1372,23 @@ for (i in myObj.journals) {
 	}
 
 document.getElementById("my_J_generator").innerHTML += x;
+	
+	
+y = '';
+for (i in myObj.conferences) {
+	y += '<div class="row pubs-row">';
+    y += '<div class="col-md-6 pubs-left">'
+    y += '<h3>' + myObj.conferences[i].title + +myObj.conferences[i].sjr_id+ "</h3>";
+    y += '<h4>' + myObj.conferences[i].authors + "<br>";
+    y += myObj.conferences[i].details + "<br>";
+    y += 'DOI: <a href="https://doi.org/' + myObj.conferences[i].doi + '" target="_blank">' + myObj.conferences[i].doi + '</a></h4></div>';
+	y += '<div class="col-md-12 pubs-left">';
+    y += '<button type="button" class="btn" data-toggle="collapse" data-target="#j7">Abstract</button> ';
+    y += '<p  id="j7" class="collapse col-md-12">' + myObj.conferences[i].abstract + '</p>';
+    y += '</div>'
+    y += '</div>';
+	}
+document.getElementById("my_C_generator").innerHTML = y;
 </script>
 
 </body>
