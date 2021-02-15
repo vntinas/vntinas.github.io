@@ -85,11 +85,17 @@
   
   
   "conferences": [
+    { "c_id":"2",
+    "title":"GPU and FPGA parallelization of fuzzy cellular automata for the simulation of wildfire spreading",
+    "authors":"",
+    "details":"",
+    "doi":"",
+    "abstract":""},
+    
     { "c_id":"1",
     "title":"LC filters with enhanced memristive damping",
     "authors":"",
     "details":"",
     "doi":"",
-    "abstract":""},
-  ]
+    "abstract":""}]
  }
