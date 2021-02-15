@@ -6,7 +6,7 @@ $().ready(function(){
     for (i in myObj.journals) {
         x += '<div class="row pubs-row">';
         x += '<div class="col-md-6 pubs-left">'
-        x += '<h3>' + myObj.journals[i].title + +myObj.journals[i].sjr_id+ "</h3>";
+        x += '<h3>' + myObj.journals[i].title + "</h3>";
         x += '<h4>' + myObj.journals[i].authors + "<br>";
         x += myObj.journals[i].details + "<br>";
         x += 'DOI: <a href="https://doi.org/' + myObj.journals[i].doi + '" target="_blank">' + myObj.journals[i].doi + '</a></h4></div>';
@@ -26,7 +26,7 @@ $().ready(function(){
     for (i in myObj.conferences) {
         y += '<div class="row pubs-row">';
         y += '<div class="col-md-6 pubs-left">'
-        y += '<h3>' + myObj.conferences[i].title + +myObj.conferences[i].sjr_id+ "</h3>";
+        y += '<h3>' + myObj.conferences[i].title + "</h3>";
         y += '<h4>' + myObj.conferences[i].authors + "<br>";
         y += myObj.conferences[i].details + "<br>";
         y += 'DOI: <a href="https://doi.org/' + myObj.conferences[i].doi + '" target="_blank">' + myObj.conferences[i].doi + '</a></h4></div>';
