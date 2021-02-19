@@ -36,7 +36,7 @@ $().ready(function(){
         if (myObj.conferences[i].cite_by=='') {
             y += '</h4></div>';
         } else {
-            y += 'Cited by: <a href="' + myObj.conferences[i].cite_by + '" target="_blank"><img src="Google-Scholar-logo.png" width="20px"/></a></h4></div>';
+            y += 'Cited by: <a href="' + myObj.conferences[i].cite_by + '" target="_blank"><img src="Google-Scholar-logo.png" width="17px"/></a></h4></div>';
         }
         y += '<div class="col-md-12 pubs-left">';
         y += '<button type="button" class="btn" data-toggle="collapse" data-target="#c' + myObj.conferences[i].c_id + '">Abstract</button> ';
