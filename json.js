@@ -12,7 +12,7 @@ $().ready(function(){
         if (myObj.journals[i].cite_by=='') {
             x += '</h4></div>';
         } else {
-            x += 'Cited by: <a href="' + myObj.journals[i].cite_by + '" target="_blank"><img src="Google-Scholar-logo.png" width="20px"/></a></h4></div>';
+            x += 'Cited by: <a href="' + myObj.journals[i].cite_by + '" target="_blank"><img src="Google-Scholar-logo.png" width="17px"/></a></h4></div>';
         }
         x += '<div class="col-sm-4 col-sm-offset-1 pubs-right">';
         x += '<a href="https://www.scimagojr.com/journalsearch.php?q=' + myObj.journals[i].sjr_id + '&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank" target="_blank">';
@@ -30,10 +30,14 @@ $().ready(function(){
     for (i in myObj.conferences) {
         y += '<div class="row pubs-row">';
         y += '<div class="col-md-6 pubs-left">'
-        y += '<h3>' + myObj.conferences[i].title + "</h3>";
+        y += '<h3> <a href="' + myObj.conferences[i].url + '" target="_blank">' + myObj.conferences[i].title + '</a></h3>';
         y += '<h4>' + myObj.conferences[i].authors + "<br>";
         y += myObj.conferences[i].details + "<br>";
-        y += 'DOI: <a href="https://doi.org/' + myObj.conferences[i].doi + '" target="_blank">' + myObj.conferences[i].doi + '</a></h4></div>';
+        if (myObj.conferences[i].cite_by=='') {
+            y += '</h4></div>';
+        } else {
+            y += 'Cited by: <a href="' + myObj.conferences[i].cite_by + '" target="_blank"><img src="Google-Scholar-logo.png" width="20px"/></a></h4></div>';
+        }
         y += '<div class="col-md-12 pubs-left">';
         y += '<button type="button" class="btn" data-toggle="collapse" data-target="#c' + myObj.conferences[i].c_id + '">Abstract</button> ';
         y += '<p  id="c' + myObj.conferences[i].c_id + '" class="collapse col-md-12">' + myObj.conferences[i].abstract + '</p>';
