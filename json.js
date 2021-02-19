@@ -6,10 +6,10 @@ $().ready(function(){
     for (i in myObj.journals) {
         x += '<div class="row pubs-row">';
         x += '<div class="col-md-6 pubs-left">'
-        x += '<h3>' + myObj.journals[i].title + "</h3>";
+        x += '<h3> <a href="' + myObj.journals[i].url + '" target="_blank">' + myObj.journals[i].title + '</a></h3>';
         x += '<h4>' + myObj.journals[i].authors + "<br>";
         x += myObj.journals[i].details + "<br>";
-        x += 'DOI: <a href="https://doi.org/' + myObj.journals[i].doi + '" target="_blank">' + myObj.journals[i].doi + '</a></h4></div>';
+        x += 'Cite by: <a href="' + myObj.journals[i].cite_by + '" target="_blank"><img src="Google-Scholar-logo.png" width="20px"/></a></h4></div>';
         x += '<div class="col-sm-4 col-sm-offset-1 pubs-right">';
         x += '<a href="https://www.scimagojr.com/journalsearch.php?q=' + myObj.journals[i].sjr_id + '&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank" target="_blank">';
         x += '<img border="0" src="https://www.scimagojr.com/journal_img.php?id=' + myObj.journals[i].sjr_id + '" alt="SCImago Journal &amp; Country Rank"/></a>';
