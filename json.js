@@ -9,7 +9,11 @@ $().ready(function(){
         x += '<h3> <a href="' + myObj.journals[i].url + '" target="_blank">' + myObj.journals[i].title + '</a></h3>';
         x += '<h4>' + myObj.journals[i].authors + "<br>";
         x += myObj.journals[i].details + "<br>";
-        x += 'Cite by: <a href="' + myObj.journals[i].cite_by + '" target="_blank"><img src="Google-Scholar-logo.png" width="20px"/></a></h4></div>';
+        if (myObj.journals[i].cite_by=='') {
+            x += '</h4></div>';
+        } else {
+            x += 'Cited by: <a href="' + myObj.journals[i].cite_by + '" target="_blank"><img src="Google-Scholar-logo.png" width="20px"/></a></h4></div>';
+        }
         x += '<div class="col-sm-4 col-sm-offset-1 pubs-right">';
         x += '<a href="https://www.scimagojr.com/journalsearch.php?q=' + myObj.journals[i].sjr_id + '&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank" target="_blank">';
         x += '<img border="0" src="https://www.scimagojr.com/journal_img.php?id=' + myObj.journals[i].sjr_id + '" alt="SCImago Journal &amp; Country Rank"/></a>';
